@@ -13,7 +13,9 @@ type PhotoType = {
   photographer_url: string;
   src: {
     landscape: string;
+    portrait: string;
+    large: string;
   };
 };
 
-export { ResponsePhotosType };
+export type { ResponsePhotosType, PhotoType };

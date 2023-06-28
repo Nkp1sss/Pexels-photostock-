@@ -1,5 +1,5 @@
 import './Searchbar.scss';
-import Magnifier from '../Icons/Magnifier/Magnifier';
+import Magnifier from '../Tools/Magnifier/Magnifier';
 
 function Searchbar() {
   return (

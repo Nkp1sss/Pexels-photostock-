@@ -2,7 +2,7 @@ import './Header.scss';
 
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { getPhotos } from '../../api';
+import { getPhotosByParams } from '../../api';
 import { ResponsePhotosType } from '../../types';
 import { getRandomNumber } from '../../utils';
 import { getUniqueWords } from '../../utils';
@@ -14,7 +14,7 @@ function Header() {
   const [headerData, setHeaderData] = useState<ResponsePhotosType>();
 
   useEffect(() => {
-    getPhotos([
+    getPhotosByParams([
       { key: 'query', value: 'beautiful' },
       { key: 'orientation', value: 'landscape' },
     ]).then((data) => setHeaderData(data));
