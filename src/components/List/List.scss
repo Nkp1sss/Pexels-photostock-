@@ -1,0 +1,30 @@
+.list {
+  margin-top: 100px;
+
+  .container {
+    max-width: 1360px;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  .column {
+    width: calc(100% / 3 - 10px);
+    flex: 1 1 0%;
+
+    .item {
+      margin-bottom: 30px;
+      cursor: pointer;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    .column {
+      width: calc(100% / 2 - 10px);
+    }
+  }
+}
