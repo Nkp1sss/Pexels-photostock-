@@ -2,6 +2,8 @@ import './Main.scss';
 
 import List from '../../components/List/List';
 import InfiniteScroll from 'react-infinite-scroll-component';
+import Header from '../../components/Header/Header';
+import Navbar from '../../components/Navbar/Navbar';
 import Loader from '../../components/Tools/Loader/Loader';
 import { useEffect, useState } from 'react';
 import { getPhotosByParams, getPhotosByString } from '../../api';
@@ -35,7 +37,9 @@ function Main() {
   };
 
   return (
-    <>
+    <div className="main-page">
+      <Navbar />
+      <Header />
       <InfiniteScroll
         style={{ overflow: 'unset' }}
         dataLength={images.length}
@@ -45,7 +49,7 @@ function Main() {
       >
         <List photos={images} />
       </InfiniteScroll>
-    </>
+    </div>
   );
 }
 

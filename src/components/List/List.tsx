@@ -29,6 +29,7 @@ function List({ photos }: { photos: PhotoType[] }) {
               photos.map((image, photoIndex) => {
                 if (photoIndex % columnsCount === columnIndex)
                   return (
+                    // здесь будет компонент картинки
                     <div className="item" key={photoIndex}>
                       <img src={image.src.large} alt="image" />
                     </div>

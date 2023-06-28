@@ -26,7 +26,6 @@ function Header() {
   return (
     <header className="header">
       <div className="container">
-        <Navbar />
         <div className="header__content">
           <h1 className="header__title">
             The best free stock photos, royalty free images & videos shared by creators.
@@ -41,14 +40,14 @@ function Header() {
             ))}
           </div>
         </div>
-        {headerData && (
+        {photoData && (
           <>
             <img
               className="header__background"
-              src={photoData?.src.landscape}
+              src={photoData.src.landscape}
               alt="header background"
             />
-            <Link to={photoData?.photographer_url as string} target="_blank">
+            <Link to={photoData.photographer_url as string} target="_blank">
               <p className="photo-by">
                 Photo by&nbsp;
                 <span>{photoData?.photographer}</span>
