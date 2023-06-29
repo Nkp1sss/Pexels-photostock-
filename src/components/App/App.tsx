@@ -8,8 +8,8 @@ import {
   RouterProvider,
 } from 'react-router-dom';
 import Main from '../../pages/Main/Main';
-import Notfound from '../../pages/Notfound/Notfound';
 import Category from '../../pages/Category/Category';
+import Notfound from '../../pages/Notfound/Notfound';
 
 const router = createBrowserRouter(
   createRoutesFromElements(

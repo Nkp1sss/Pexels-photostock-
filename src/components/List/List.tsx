@@ -2,6 +2,7 @@ import './List.scss';
 
 import { useState, useEffect } from 'react';
 import { PhotoType } from '../../types';
+import Image from '../Image/Image';
 
 function List({ photos }: { photos: PhotoType[] }) {
   const [columnsCount, setColumnsCount] = useState<number>(window.innerWidth < 900 ? 2 : 3);
@@ -28,12 +29,7 @@ function List({ photos }: { photos: PhotoType[] }) {
             {photos &&
               photos.map((image, photoIndex) => {
                 if (photoIndex % columnsCount === columnIndex)
-                  return (
-                    // здесь будет компонент картинки
-                    <div className="item" key={photoIndex}>
-                      <img src={image.src.large} alt="image" />
-                    </div>
-                  );
+                  return <Image key={photoIndex} {...image} />;
               })}
           </div>
         ))}

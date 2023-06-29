@@ -15,6 +15,7 @@ type PhotoType = {
     landscape: string;
     portrait: string;
     large: string;
+    original: string;
   };
 };
 

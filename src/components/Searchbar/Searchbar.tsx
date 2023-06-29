@@ -1,8 +1,8 @@
 import './Searchbar.scss';
 
-import Magnifier from '../Tools/Magnifier/Magnifier';
 import React, { ChangeEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Magnifier from '../Tools/Magnifier/Magnifier';
 
 function Searchbar() {
   const [value, setValue] = useState<string>('');

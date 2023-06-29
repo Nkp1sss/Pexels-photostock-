@@ -1,13 +1,13 @@
 import './Main.scss';
 
-import List from '../../components/List/List';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import Header from '../../components/Header/Header';
-import Navbar from '../../components/Navbar/Navbar';
-import Loader from '../../components/Tools/Loader/Loader';
 import { useEffect, useState } from 'react';
 import { getPhotosByParams, getPhotosByString } from '../../api';
 import { ResponsePhotosType, PhotoType } from '../../types';
+import List from '../../components/List/List';
+import Header from '../../components/Header/Header';
+import Navbar from '../../components/Navbar/Navbar';
+import Loader from '../../components/Tools/Loader/Loader';
 
 function Main() {
   const [response, setResponse] = useState<ResponsePhotosType>();
@@ -27,7 +27,7 @@ function Main() {
 
   const fetchMorePhotos = () => {
     if (response && response.next_page) {
-      getPhotosByString(response?.next_page).then((data) => {
+      getPhotosByString(response.next_page).then((data) => {
         if (data) {
           setResponse(data);
           setImages((oldImages) => [...oldImages, ...data.photos]);

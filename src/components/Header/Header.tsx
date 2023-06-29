@@ -7,7 +7,6 @@ import { ResponsePhotosType } from '../../types';
 import { getRandomNumber } from '../../utils';
 import { getUniqueWords } from '../../utils';
 import { queryExamples } from '../../constants';
-import Navbar from '../Navbar/Navbar';
 import Searchbar from '../Searchbar/Searchbar';
 
 function Header() {
@@ -32,7 +31,7 @@ function Header() {
           </h1>
           <Searchbar />
           <div className="header__trending">
-            Trending:{' '}
+            Trending:
             {getUniqueWords(queryExamples, 7).map((word, index) => (
               <span key={`${word}-${index}`}>
                 <Link to={`/search/${word}`}>{word}</Link>,&nbsp;

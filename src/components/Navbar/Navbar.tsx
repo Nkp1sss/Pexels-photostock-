@@ -1,10 +1,10 @@
 import './Navbar.scss';
 
 import { Link } from 'react-router-dom';
-import Searchbar from '../Searchbar/Searchbar';
-import logo from '../../assets/logo.png';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import logo from '../../assets/logo.png';
+import Searchbar from '../Searchbar/Searchbar';
 
 function Navbar() {
   const [isHeaderScrolled, setHeaderScrolled] = useState(false);
