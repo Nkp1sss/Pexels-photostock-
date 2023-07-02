@@ -19,4 +19,8 @@ type PhotoType = {
   };
 };
 
-export type { ResponsePhotosType, PhotoType };
+type UseParamsType = {
+  query?: string;
+};
+
+export type { ResponsePhotosType, PhotoType, UseParamsType };

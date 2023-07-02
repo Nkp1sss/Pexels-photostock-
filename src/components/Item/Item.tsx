@@ -1,4 +1,4 @@
-import './Image.scss';
+import './Item.scss';
 
 import { useState } from 'react';
 import { Link } from 'react-router-dom';

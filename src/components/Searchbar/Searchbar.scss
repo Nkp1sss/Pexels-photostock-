@@ -1,18 +1,18 @@
-.input {
+.search {
+  display: flex;
+  flex-direction: row;
   width: 100%;
-  color: #7f7f7f;
-  padding-left: 20px;
-  font-size: 18px;
-  font-weight: 600;
+  height: 50px;
+  border-radius: 8px;
+  overflow: hidden;
   background-color: #F7F7F7;
 
-  &__wrapper {
-    display: flex;
-    flex-direction: row;
+  &__input {
     width: 100%;
-    height: 50px;
-    border-radius: 8px;
-    overflow: hidden;
+    color: #7f7f7f;
+    padding-left: 20px;
+    font-size: 18px;
+    font-weight: 600;
     background-color: #F7F7F7;
   }
 

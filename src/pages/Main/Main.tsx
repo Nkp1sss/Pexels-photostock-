@@ -15,7 +15,7 @@ function Main() {
 
   useEffect(() => {
     getPhotosByParams([
-      { key: 'query', value: 'beautiful' },
+      { key: 'query', value: 'papa' },
       { key: 'per_page', value: '30' },
     ]).then((data) => {
       if (data) {
@@ -43,7 +43,7 @@ function Main() {
       <InfiniteScroll
         style={{ overflow: 'unset' }}
         dataLength={images.length}
-        hasMore={response?.next_page !== null}
+        hasMore={!!response?.next_page}
         loader={<Loader />}
         next={fetchMorePhotos}
       >

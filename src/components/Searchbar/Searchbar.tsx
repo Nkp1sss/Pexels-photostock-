@@ -1,11 +1,13 @@
 import './Searchbar.scss';
 
 import React, { ChangeEvent, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Magnifier from '../Tools/Magnifier/Magnifier';
+import { UseParamsType } from '../../types';
 
 function Searchbar() {
-  const [value, setValue] = useState<string>('');
+  const { query }: UseParamsType = useParams();
+  const [value, setValue] = useState<string>(query ? query : '');
   const navigate = useNavigate();
 
   const onChangeClick = (e: ChangeEvent<HTMLInputElement>) => setValue(e.target.value);
@@ -17,9 +19,9 @@ function Searchbar() {
   };
 
   return (
-    <div className="input__wrapper">
+    <div className="search">
       <input
-        className="input"
+        className="search__input"
         type="text"
         value={value}
         onChange={onChangeClick}
@@ -27,7 +29,7 @@ function Searchbar() {
         onKeyDown={onEnterClick}
       />
       <button
-        className="input__button"
+        className="search__button"
         onClick={() => navigate(`/search/${value}`, { replace: true })}
       >
         <Magnifier />

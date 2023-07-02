@@ -2,7 +2,7 @@ import './List.scss';
 
 import { useState, useEffect } from 'react';
 import { PhotoType } from '../../types';
-import Image from '../Image/Image';
+import Image from '../Item/Item';
 
 function List({ photos }: { photos: PhotoType[] }) {
   const [columnsCount, setColumnsCount] = useState<number>(window.innerWidth < 900 ? 2 : 3);
