@@ -1,6 +1,6 @@
 import './Item.scss';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { PhotoType } from '../../types';
 import { downloadImage, saveToLS, isExistsInLS, removeFromLS } from '../../utils';
@@ -10,6 +10,8 @@ import Download from '../Tools/Download/Download';
 
 function Image({ src, photographer, photographer_url, id }: PhotoType) {
   const [isSaved, setIsSaved] = useState<boolean>(isExistsInLS(id));
+
+  useEffect(() => setIsSaved(isExistsInLS(id)));
 
   return (
     <div className="image__wrapper">

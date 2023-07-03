@@ -12,10 +12,11 @@ import Loader from '../../components/Tools/Loader/Loader';
 function Category() {
   const { query }: UseParamsType = useParams();
   const [response, setResponse] = useState<ResponsePhotosType>();
-  console.log(response);
   const [images, setImages] = useState<PhotoType[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
+    setIsLoading(true);
     getPhotosByParams([
       { key: 'query', value: query || '' },
       { key: 'per_page', value: '30' },
@@ -23,6 +24,7 @@ function Category() {
       if (data) {
         setResponse(data);
         setImages(data.photos);
+        setIsLoading(false);
       }
     });
   }, [query]);
@@ -40,25 +42,31 @@ function Category() {
 
   return (
     <div className="category-page">
-      <div className="123">
-        <Navbar />
-        {response && !images.length && (
-          <h2 className="title container">
-            We couldn’t find anything for &ldquo;{`${query}`}&ldquo;.
-            <br />
-            Try to refine your search.
-          </h2>
-        )}
-        <InfiniteScroll
-          style={{ overflow: 'unset' }}
-          dataLength={images.length}
-          hasMore={!!response?.next_page}
-          loader={<Loader />}
-          next={fetchMorePhotos}
-        >
-          <List photos={images} />
-        </InfiniteScroll>
-      </div>
+      <Navbar />
+      {!isLoading ? (
+        <>
+          {response && !images.length ? (
+            <h2 className="notfound container">
+              We couldn’t find anything for &ldquo;{`${query}`}&ldquo;.
+              <br />
+              Try to refine your search.
+            </h2>
+          ) : (
+            <h2 className="title">{`${query} Photos`}</h2>
+          )}
+          <InfiniteScroll
+            style={{ overflow: 'unset' }}
+            dataLength={images.length}
+            hasMore={!!response?.next_page}
+            loader={<Loader />}
+            next={fetchMorePhotos}
+          >
+            <List photos={images} />
+          </InfiniteScroll>
+        </>
+      ) : (
+        <Loader />
+      )}
     </div>
   );
 }
