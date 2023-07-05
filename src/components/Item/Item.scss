@@ -40,15 +40,24 @@
 
     @media screen and (max-width: 650px) {
       display: flex;
+      background-color: inherit;
+      bottom: 10px;
+      right: 10px;
     }
 
     &:hover {
       opacity: 0.9;
     }
 
-    img {
+    svg {
       width: 26px;
       height: 26px;
+
+      path {
+        @media screen and (max-width: 650px) {
+          fill: white;
+        }
+      }
     }
   }
 
