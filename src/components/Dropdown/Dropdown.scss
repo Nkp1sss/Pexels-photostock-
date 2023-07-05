@@ -1,0 +1,45 @@
+.dd-wrapper {
+  position: relative;
+  min-width: 300px;
+  border: 1px solid #dfdfe0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+  transition: 0.2s;
+
+  @media screen and (max-width: 340px) {
+    min-width: 260px;
+  }
+
+  &:hover {
+    border-color: #7F7F7F;
+  }
+
+  .dd-list {
+    position: absolute;
+    left: 0;
+    top: 55px;
+    z-index: 1;
+    background-color: white;
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid #dfdfe0;
+    overflow: hidden;
+    
+    &-item {
+      height: 50px;
+      display: flex;
+      align-items: center;
+      padding-left: 30px;
+
+      &:hover {
+        background-color: #F7F7F7;
+      }
+    }
+  }
+}
