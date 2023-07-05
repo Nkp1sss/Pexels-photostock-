@@ -23,4 +23,10 @@ type UseParamsType = {
   query?: string;
 };
 
-export type { ResponsePhotosType, PhotoType, UseParamsType };
+type DDItemType = {
+  id: number;
+  name: string;
+  value: string;
+};
+
+export type { ResponsePhotosType, PhotoType, UseParamsType, DDItemType };

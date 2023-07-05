@@ -1,25 +1,11 @@
 import './List.scss';
 
-import { useState, useEffect } from 'react';
+import { useResizeWindow } from '../../hooks';
 import { PhotoType } from '../../types';
 import Image from '../Item/Item';
 
 function List({ photos }: { photos: PhotoType[] }) {
-  const [columnsCount, setColumnsCount] = useState<number>(window.innerWidth < 900 ? 2 : 3);
-
-  useEffect(() => {
-    const resize = () => {
-      if (columnsCount === 2 && window.innerWidth >= 900) {
-        setColumnsCount(3);
-      }
-      if (columnsCount === 3 && window.innerWidth < 900) {
-        setColumnsCount(2);
-      }
-    };
-
-    window.addEventListener('resize', resize);
-    return () => window.removeEventListener('resize', resize);
-  });
+  const columnsCount = useResizeWindow();
 
   return (
     <div className="list">

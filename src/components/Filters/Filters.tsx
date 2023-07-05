@@ -1,7 +1,7 @@
 import './Filters.scss';
 
-import Dropdown from '../Dropdown/Dropdown';
 import { FilterEnum, orientationItems, sizeItems } from '../../constants';
+import Dropdown from '../Dropdown/Dropdown';
 
 function Filters() {
   return (

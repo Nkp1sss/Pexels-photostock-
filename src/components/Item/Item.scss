@@ -5,11 +5,11 @@
   position: relative;
 
   @media screen and (max-width: 1360px) {
-      margin-bottom: 20px;
+    margin-bottom: 20px;
   }
 
   @media screen and (max-width: 500px) {
-      margin-bottom: 10px;
+    margin-bottom: 10px;
   }
 
   .image {
@@ -37,6 +37,10 @@
     align-items: center;
     justify-content: center;
     background-color: white;
+
+    @media screen and (max-width: 650px) {
+      display: flex;
+    }
 
     &:hover {
       opacity: 0.9;
@@ -82,6 +86,10 @@
     .image-photographer {
       display: inline;
       filter: none;
+
+      @media screen and (max-width: 650px) {
+        display: none;
+      }
     }
 
     .download__wrapper {
@@ -90,6 +98,12 @@
 
     .like__wrapper {
       display: flex;
+    }
+
+    @media screen and (max-width: 650px) {
+      .like__wrapper {
+        display: none;
+      }
     }
   }
 }

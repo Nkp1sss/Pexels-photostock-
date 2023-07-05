@@ -1,4 +1,4 @@
-import { ItemType } from '../components/Dropdown/Dropdown';
+import { DDItemType } from '../types';
 
 const API_BASE_URL = 'https://api.pexels.com/v1/';
 
@@ -45,7 +45,7 @@ const queryExamples: string[] = [
   'cave',
 ];
 
-const orientationItems: ItemType[] = [
+const orientationItems: DDItemType[] = [
   {
     id: 1,
     name: 'All Orientations',
@@ -68,7 +68,7 @@ const orientationItems: ItemType[] = [
   },
 ];
 
-const sizeItems: ItemType[] = [
+const sizeItems: DDItemType[] = [
   {
     id: 1,
     name: 'All Sizes',
