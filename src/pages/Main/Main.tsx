@@ -15,7 +15,7 @@ function Main() {
 
   useEffect(() => {
     getPhotosByParams([
-      { key: 'query', value: 'papa' },
+      { key: 'query', value: 'beautiful' },
       { key: 'per_page', value: '30' },
     ]).then((data) => {
       if (data) {

@@ -9,15 +9,39 @@
   height: 50px;
   display: flex;
   align-items: center;
-  padding-left: 30px;
   transition: 0.2s;
 
   @media screen and (max-width: 340px) {
     min-width: 260px;
   }
 
+  svg path {
+    transition: 0.2s;
+  }
+
   &:hover {
     border-color: #7F7F7F;
+
+    svg path {
+      stroke: #7D7D7D;
+    }
+  }
+
+  .dd-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+
+    .dd-header__icon {
+      transform: rotate(0deg);
+      transition: transform 0.2s ease;
+  
+      &.open {
+        transform: rotate(180deg);
+      }
+    }
   }
 
   .dd-list {
