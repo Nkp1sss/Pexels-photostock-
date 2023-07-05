@@ -4,6 +4,14 @@
   transition: 0.1s;
   position: relative;
 
+  @media screen and (max-width: 1360px) {
+      margin-bottom: 20px;
+  }
+
+  @media screen and (max-width: 500px) {
+      margin-bottom: 10px;
+  }
+
   .image {
     width: 100%;
   }

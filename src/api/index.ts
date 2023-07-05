@@ -3,11 +3,16 @@ import { ResponsePhotosType } from '../types';
 
 type QueryParamsType = {
   key: string;
-  value: string | null;
+  value: string;
 };
 
 const generateQueryString = (queryParams: QueryParamsType[]): string => {
-  return queryParams.length ? `?${queryParams.map((x) => `${x.key}=${x.value}`).join('&')}` : '';
+  return queryParams.length
+    ? `?${queryParams
+        .filter((x) => x.value !== '')
+        .map((x) => `${x.key}=${x.value}`)
+        .join('&')}`
+    : '';
 };
 
 const getPhotosByParams = async (
