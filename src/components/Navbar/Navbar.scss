@@ -1,0 +1,47 @@
+.navbar {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  position: absolute;
+  z-index: 1;
+
+  &-logo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    transition: 0.3s;
+    margin-right: 25px;
+
+    &.scrolled {
+      color: black;
+    }
+
+    &:hover {
+      filter: brightness(0.85);
+    }
+
+    &__image {
+      border-radius: 8px;
+    }
+
+    &__title {
+      font-weight: 400;
+      font-size: 24px;
+      
+      @media screen and (max-width: 900px) {
+        display: none;
+      }
+    }
+  }
+
+  &.fixed {
+    position: fixed;
+    background-color: white;
+    z-index: 1;
+  }
+}

@@ -1,0 +1,21 @@
+.category-page {
+  min-height: 101vh;
+
+  .notfound {
+    padding-top: 130px;
+    font-weight: 600;
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+
+  .title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 600;
+    font-size: 24px;
+  }
+
+  .filters-wrapper {
+    margin-bottom: 30px;
+  }
+}
