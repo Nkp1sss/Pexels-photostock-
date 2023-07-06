@@ -4,7 +4,7 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import { useEffect, useState, createContext } from 'react';
 import { useParams } from 'react-router';
 import { PhotoType, ResponsePhotosType, UseParamsType } from '../../types';
-import { getPhotosByParams, getPhotosByString } from '../../api';
+import { getPhotosByParams, getPhotosByString } from '../../api/photos';
 import List from '../../components/List/List';
 import Navbar from '../../components/Navbar/Navbar';
 import Loader from '../../components/Tools/Loader/Loader';
