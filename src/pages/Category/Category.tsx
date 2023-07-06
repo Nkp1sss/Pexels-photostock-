@@ -24,6 +24,7 @@ function Category() {
   const { query }: UseParamsType = useParams();
   const [response, setResponse] = useState<ResponsePhotosType>();
   const [images, setImages] = useState<PhotoType[]>([]);
+  console.log(images);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [orientation, setOrientation] = useState<string>('');
   const [size, setSize] = useState<string>('');

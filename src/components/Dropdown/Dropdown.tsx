@@ -5,6 +5,7 @@ import { useOutsideClick } from '../../hooks';
 import { FilterEnum } from '../../constants';
 import { DDItemType } from '../../types';
 import { FiltersContext } from '../../pages/Category/Category';
+import tick from '../../assets/tick.svg';
 import Arrow from '../Tools/Arrow/Arrow';
 
 type DropdownPropsType = {
@@ -43,7 +44,8 @@ function Dropdown({ items, filter }: DropdownPropsType) {
         <ul className="dd-list">
           {items.map((item) => (
             <li className="dd-list-item" key={item.id} onClick={() => handleClickItem(item)}>
-              {item.name}
+              <p className="dd-list-item__name">{item.name}</p>
+              {item.id === selected.id && <img src={tick} alt="selected icon" />}
             </li>
           ))}
         </ul>
