@@ -2,7 +2,7 @@ import './Main.scss';
 
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { useEffect, useState } from 'react';
-import { getPhotosByParams, getPhotosByString } from '../../api';
+import { getPhotosByParams, getPhotosByString } from '../../api/photos';
 import { ResponsePhotosType, PhotoType } from '../../types';
 import List from '../../components/List/List';
 import Header from '../../components/Header/Header';

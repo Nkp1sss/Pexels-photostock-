@@ -2,7 +2,7 @@ import './Header.scss';
 
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { getPhotosByParams } from '../../api';
+import { getPhotosByParams } from '../../api/photos';
 import { ResponsePhotosType } from '../../types';
 import { getRandomNumber } from '../../utils';
 import { getUniqueWords } from '../../utils';
