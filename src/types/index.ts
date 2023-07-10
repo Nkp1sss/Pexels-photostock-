@@ -11,6 +11,7 @@ type PhotoType = {
   id: number;
   photographer: string;
   photographer_url: string;
+  alt: string;
   src: {
     landscape: string;
     portrait: string;

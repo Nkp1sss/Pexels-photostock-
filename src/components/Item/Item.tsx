@@ -8,7 +8,7 @@ import heart from '../../assets/heart.svg';
 import filledHeart from '../../assets/filledHeart.svg';
 import Download from '../Tools/Download/Download';
 
-function Image({ src, photographer, photographer_url, id }: PhotoType) {
+function Image({ src, photographer, photographer_url, alt, id }: PhotoType) {
   const [isSaved, setIsSaved] = useState<boolean>(isExistsInLS(id));
 
   useEffect(() => setIsSaved(isExistsInLS(id)));
@@ -19,7 +19,7 @@ function Image({ src, photographer, photographer_url, id }: PhotoType) {
       <Link className="image-photographer" to={photographer_url} target="_blank">
         {photographer}
       </Link>
-      <div className="download__wrapper" onClick={() => downloadImage(src.original, 'Image')}>
+      <div className="download__wrapper" onClick={() => downloadImage(src.original, alt)}>
         <Download />
       </div>
       <div
