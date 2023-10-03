@@ -30,4 +30,16 @@ type DDItemType = {
   value: string;
 };
 
-export type { ResponsePhotosType, PhotoType, UseParamsType, DDItemType };
+interface IUser {
+  email: string;
+  isActivated: boolean;
+  id: string;
+}
+
+interface IAuthResponse {
+  accessToken: string;
+  refreshToken: string;
+  user: IUser;
+}
+
+export type { ResponsePhotosType, PhotoType, UseParamsType, DDItemType, IUser, IAuthResponse };
